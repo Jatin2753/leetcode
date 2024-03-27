@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isHappy(int n) {
+        int b,sum;    
+      do{
+           sum=0;
+           while(n!=0)
+         {
+             b=n%10; 
+             sum+=b*b;
+              n=n/10;
+         }
+      n=sum;
+       }while(sum>=5);
+        if(n==1)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}

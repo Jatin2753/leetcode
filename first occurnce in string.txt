@@ -1,0 +1,10 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+        
+        int index = haystack.indexOf(needle);         
+        while (index != -1) { 
+            return index;
+        }
+        return -1;
+    }
+}

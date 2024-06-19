@@ -1,0 +1,23 @@
+class Solution {
+    public int[][] largestLocal(int[][] grid) {
+        int n = grid.length;
+        int[][] result = new int[n-2][n-2]; 
+        for (int row = 0; row <= n - 3; row++) {
+            for (int col = 0; col <= n - 3; col++) {
+                int max = Integer.MIN_VALUE;
+                for (int i = row; i < row + 3; i++) {
+                    for (int j = col; j < col + 3; j++) {
+                        if (grid[i][j] > max) {
+                            max = grid[i][j];
+                        }
+                    }
+                }
+                
+              
+                result[row][col] = max;
+            }
+        }
+        
+        return result;
+    }
+}

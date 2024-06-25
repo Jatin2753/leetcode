@@ -1,0 +1,19 @@
+class Solution {
+    public int findPermutationDifference(String s, String t) {
+        char c1[]=s.toCharArray();
+        char c2[]=t.toCharArray();
+        int sum=0;
+        for(int i=0;i<c1.length;i++)
+        {
+            char x=c1[i];
+            for(int j=0;j<c2.length;j++)
+            {
+                if(x==c2[j])
+                {
+                     sum+=Math.abs(i-j);
+                }
+            }
+        }
+        return sum;
+    }
+}

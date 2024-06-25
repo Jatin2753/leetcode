@@ -1,0 +1,25 @@
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        char[][] ch = new char[sentences.length][];
+        for (int i = 0; i < sentences.length; i++) {
+            ch[i] = sentences[i].toCharArray(); 
+        }
+        int maxCount = 0; 
+        for (int i = 0; i < ch.length; i++) {
+            int count = 0; 
+            for (int j = 0; j < ch[i].length; j++) {
+                if (ch[i][j] != ' ' && ch[i][j] != ',') {
+                    count++;   
+                    while (j < ch[i].length - 1 && ch[i][j + 1] != ' ' && ch[i][j + 1] != ',') {
+                        j++;
+                    }
+                }
+            }
+            if (count > maxCount) {
+                maxCount = count;
+            }
+        }
+        
+        return maxCount; 
+    }
+}

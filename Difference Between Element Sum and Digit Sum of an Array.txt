@@ -1,0 +1,18 @@
+class Solution {
+    public int differenceOfSum(int[] nums) {
+        int esum=0,dsum=0,res;
+        for(int i=0;i<nums.length;i++){
+            esum+=nums[i];
+        }
+         for(int i=0;i<nums.length;i++){
+           int x=nums[i];
+           while(x!=0){
+              int b=x%10;
+              dsum+=b;
+              x=x/10;
+           }
+        }
+        res=Math.abs(esum-dsum);
+        return res;
+    }
+}

@@ -1,0 +1,26 @@
+class Solution {
+    public int countConsistentStrings(String allowed, String[] words) {
+      char c1[]=allowed.toCharArray();
+      int count=0;
+       for (int i = 0; i < words.length; i++) {
+            boolean isConsistent = true;
+            for (int j = 0; j < words[i].length(); j++) {
+                boolean charAllowed = false;
+                for (int k = 0; k < c1.length; k++) {
+                    if (words[i].charAt(j) == c1[k]) {
+                        charAllowed = true;
+                        break;
+                    }
+                }
+                if (!charAllowed) {
+                    isConsistent = false;
+                    break;
+                }
+            }
+            if (isConsistent) {
+                count++;
+            }
+        }
+      return count;
+    }
+}

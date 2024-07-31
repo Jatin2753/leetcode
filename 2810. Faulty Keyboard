@@ -1,0 +1,16 @@
+class Solution {
+    public String finalString(String s) {
+       char[] c = s.toCharArray();
+       StringBuilder str = new StringBuilder();
+        
+        for(int i=0;i<c.length;i++){
+            if(c[i]=='i'){
+            str.reverse();
+            }
+           else{
+            str.append(c[i]);
+           }
+        }
+        return str.toString();
+    }
+}

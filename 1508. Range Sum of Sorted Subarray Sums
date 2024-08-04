@@ -1,0 +1,24 @@
+
+public class Solution {
+    private static final int MOD = 1000000007;
+
+    public int rangeSum(int[] nums, int n, int left, int right) {
+        ArrayList<Integer> list = new ArrayList<>();
+        int num;
+        for (int i = 0; i < nums.length; i++) {
+            num = 0;
+            for (int j = i; j < nums.length; j++) {
+                num += nums[j];
+                list.add(num);
+            }
+        }
+
+        Collections.sort(list);
+        long sum = 0;
+        for (int i = left - 1; i < right; i++) {
+            sum = (sum + list.get(i)) % MOD;
+        }
+
+        return (int) sum;
+    }
+}

@@ -1,0 +1,22 @@
+class Solution {
+    public String kthDistinct(String[] arr, int k) {
+        ArrayList<String> distinctList = new ArrayList<>();
+        ArrayList<String> tempList = new ArrayList<>();
+        for (String s : arr) {
+            if (tempList.contains(s)) {
+                distinctList.remove(s);
+            } else {
+                tempList.add(s);
+                if (!distinctList.contains(s)) {
+                    distinctList.add(s);
+                }
+            }
+        }
+        
+        if (k <= 0 || k > distinctList.size()) {
+            return "";
+        }
+        
+        return distinctList.get(k - 1);
+    }
+}

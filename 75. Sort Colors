@@ -1,0 +1,19 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        boolean swap;
+        for (int j = 0; j < nums.length - 1; j++) {
+            swap = false;
+            for (int i = 0; i < nums.length - 1 - j; i++) { 
+                if (nums[i] > nums[i + 1]) {
+                    int temp = nums[i];
+                    nums[i] = nums[i + 1];
+                    nums[i + 1] = temp;
+                    swap = true;  
+                }
+            }
+            if (!swap) { 
+                break;
+            }
+        }
+    }
+}

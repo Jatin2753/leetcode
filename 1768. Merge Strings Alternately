@@ -1,0 +1,17 @@
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        int l=word1.length();
+        int m=word2.length();
+        char ch[]=new char[l+m];
+        int j=0;
+         for (int i = 0; i < Math.max(l, m); i++) {
+            if (i < l) {
+                ch[j++] = word1.charAt(i);
+            }
+            if (i < m) {
+                ch[j++] = word2.charAt(i);
+            }
+        }
+        return new String(ch);
+    }
+}
